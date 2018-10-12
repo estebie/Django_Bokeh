@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from . import BasicLine
+from . import BasicLine, Iris
 from bokeh.embed import server_session
 from bokeh.util import session_id
 
 def index(request):
     context={
-        "div":BasicLine.div,
-        "js":BasicLine.js,
-        "cdn_js":BasicLine.cdn_js,
-        "cdn_css":BasicLine.cdn_css
+        "div":Iris.div,
+        "js":Iris.js,
+        "cdn_js":Iris.cdn_js,
+        "cdn_css":Iris.cdn_css
     }
     return render(request, 'bokehapp/index.html', context)
 
